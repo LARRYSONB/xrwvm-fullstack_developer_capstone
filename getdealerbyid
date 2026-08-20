@@ -1,0 +1,2 @@
+theia@theiadocker-larrysonbiya:/home/project$ curl -X GET "https://larrysonbiya-3030.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/fetchDealer/7"
+{"_id":"6a87704db7357286c9d436b1","id":7,"city":"Pueblo","state":"Colorado","address":"9 Cambridge Park","zip":"81010","lat":"38.1286","long":"-104.5523","short_name":"Job","full_name":"Job Car Dealership","__v":0}theia@theiadocker-larrysonbiya:/home/project$
