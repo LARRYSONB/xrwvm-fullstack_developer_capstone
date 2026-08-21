@@ -1,0 +1,3 @@
+theia@theiadocker-larrysonbiya:/home/project$ curl -X GET "https://larrysonbiya-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/djangoapp
+/get_cars"
+{"CarModels": [{"CarModel": "Pathfinder", "CarMake": "Pathfinder"}, {"CarModel": "Carnival", "CarMake": "Carnival"}]}theia@theiadocker-larrysonbiya:/home/project$
