@@ -1,5 +1,3 @@
-populate.py in Djangoapp
-
 from .models import CarMake, CarModel
 
 def initiate():
