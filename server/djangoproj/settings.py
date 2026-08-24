@@ -26,8 +26,8 @@ ALLOWED_HOSTS = [
 
 # 2. Complete origins including scheme (https:// or http://)
 CSRF_TRUSTED_ORIGINS = [
-    'https://*.proxy.cognitiveclass.ai',
-    'http://*.proxy.cognitiveclass.ai/'
+    'https://https://larrysonbiya-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/',
+    'http://https://larrysonbiya-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/'
     'http://127.0.0.1:8000',
     'http://localhost:8000',
 ]
