@@ -27,4 +27,8 @@ urlpatterns = [
     # Add review route (matches POST /insert_review)
     path(route='add_review', view=views.add_review, name='add_review'),
 
+    # Post review route
+    path(route='postreview/<int:dealer_id>', view=views.post_review_view, name='post_review_view'),
+
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

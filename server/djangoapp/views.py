@@ -146,6 +146,7 @@ def get_dealer_details(request, dealer_id):
 # Create a `add_review` view to submit a review
 # def add_review(request):
 # ...
+@csrf_exempt
 def add_review(request):
     if(request.user.is_anonymous == False):
         data = json.loads(request.body)
@@ -156,6 +157,18 @@ def add_review(request):
             return JsonResponse({"status":401,"message":"Error in posting review"})
     else:
         return JsonResponse({"status":403,"message":"Unauthorized"})
+
+
+# Endpoint for rendering or fetching dealer data specifically for the postreview view
+def post_review_view(request, dealer_id):
+    if dealer_id:
+        endpoint = "/fetchDealer/" + str(dealer_id)
+        dealership = get_request(endpoint)
+        if dealership:
+            return JsonResponse({"status": 200, "dealer": dealership})
+        return JsonResponse({"status": 404, "message": "Dealer not found"})
+    return JsonResponse({"status": 400, "message": "Bad Request"})
+
 
 
 def get_cars(request):
