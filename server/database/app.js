@@ -1,3 +1,4 @@
+/* jshint esversion: 8, sub: true */
 const express = require('express');
 const mongoose = require('mongoose');
 const fs = require('fs');
@@ -22,10 +23,10 @@ const Dealerships = require('./dealership');
 async function seedDatabase() {
   try {
     await Reviews.deleteMany({});
-    await Reviews.insertMany(reviews_data.reviews);
+    await Reviews.insertMany(reviews_data['reviews']);
    
     await Dealerships.deleteMany({});
-    await Dealerships.insertMany(dealerships_data.dealerships);
+    await Dealerships.insertMany(dealerships_data['dealerships']);
    
     console.log('Database successfully seeded');
   } catch (error) {

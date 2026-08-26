@@ -1,9 +1,3 @@
 {
-    "esversion": 8,
-    "node": true,
-    "sub": true,
-    "asi": true,
-    "undef": false,
-    "unused": false
-  }
-  
+    "esversion": 8
+}
