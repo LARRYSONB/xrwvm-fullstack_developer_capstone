@@ -2,16 +2,16 @@ from .models import CarMake, CarModel
 
 def initiate():
     car_make_data = [
-        {"name": "NISSAN", "description": "Great cars. Japanese technology"},
-        {"name": "Mercedes", "description": "Great cars. German technology"},
-        {"name": "Audi", "description": "Great cars. German technology"},
-        {"name": "Kia", "description": "Great cars. Korean technology"},
-        {"name": "Toyota", "description": "Great cars. Japanese technology"},
+        {"name": "NISSAN", "desc": "Great Japanese technology"},
+        {"name": "Mercedes", "desc": "Great German technology"},
+        {"name": "Audi", "desc": "Great German technology"},
+        {"name": "Kia", "desc": "Great Korean technology"},
+        {"name": "Toyota", "desc": "Great Japanese technology"},
     ]
 
     c_m_i = [] # c_m_i is car_make_instances
     for data in car_make_data:
-        c_m_i.append(CarMake.objects.create(name=data.name, description=data.description))
+        c_m_i.append(CarMake.objects.create(name=data.name, desc=data.desc))
 
     # Create CarModel instances including the required dealer_id field
     car_model_data = [
