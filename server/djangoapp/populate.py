@@ -15,28 +15,27 @@ def initiate():
 
     # Create CarModel instances including the required dealer_id field
     car_model_data = [
-        {"name": "Pthfder", "year": 23, "dealer_id": 1, "car_make": c_m_i[0]},
-        {"name": "Qashqai", ""year": 23, "dealer_id": 1, "car_make": c_m_i[0]},
-        {"name": "XTRAIL", "year": 23, "dealer_id": 1, "car_make": c_m_i[0]},
-        {"name": "A-Class", "year": 23, "dealer_id": 2, "car_make": c_m_i[1]},
-        {"name": "C-Class", "year": 23, "dealer_id": 2, "car_make": c_m_i[1]},
-        {"name": "E-Class", "year": 23, "dealer_id": 2, "car_make": c_m_i[1]},
-        {"name": "A4", "year": 23, "dealer_id": 3, "car_make": c_m_i[2]},
-        {"name": "A5", "year": 23, "dealer_id": 3, "car_make": c_m_i[2]},
-        {"name": "A6","year": 23, "dealer_id": 3, "car_make": c_m_i[2]},
-        {"name": "Sorrento", "year": 23, "dealer_id": 4, "car_make": c_m_i[3]},
-        {"name": "Carnival", "year": 23, "dealer_id": 4, "car_make": c_m_i[3]},
-        {"name": "Cerato", "year": 23, "dealer_id": 4, "car_make": c_m_i[3]},
-        {"name": "Corolla", "year": 23, "dealer_id": 5, "car_make": c_m_i[4]},
-        {"name": "Camry", "year": 23, "dealer_id": 5, "car_make": c_m_i[4]},
-        {"name": "Kluger", "year": 23, "dealer_id": 5, "car_make": c_m_i[4]},
+        {"name": "Pthfder", "yr": 23, "dealer_id": 1, "car_make": c_m_i[0]},
+        {"name": "Qashqai", ""yr": 23, "dealer_id": 1, "car_make": c_m_i[0]},
+        {"name": "XTRAIL", "yr": 23, "dealer_id": 1, "car_make": c_m_i[0]},
+        {"name": "A-Class", "yr": 23, "dealer_id": 2, "car_make": c_m_i[1]},
+        {"name": "C-Class", "yr": 23, "dealer_id": 2, "car_make": c_m_i[1]},
+        {"name": "E-Class", "yr": 23, "dealer_id": 2, "car_make": c_m_i[1]},
+        {"name": "A4", "yr": 23, "dealer_id": 3, "car_make": c_m_i[2]},
+        {"name": "A5", "yr": 23, "dealer_id": 3, "car_make": c_m_i[2]},
+        {"name": "A6","yr": 23, "dealer_id": 3, "car_make": c_m_i[2]},
+        {"name": "Sorrento", "yr": 23, "dealer_id": 4, "car_make": c_m_i[3]},
+        {"name": "Carnival", "yr": 23, "dealer_id": 4, "car_make": c_m_i[3]},
+        {"name": "Cerato", "yr": 23, "dealer_id": 4, "car_make": c_m_i[3]},
+        {"name": "Corolla", "yr": 23, "dealer_id": 5, "car_make": c_m_i[4]},
+        {"name": "Camry", "yr": 23, "dealer_id": 5, "car_make": c_m_i[4]},
+        {"name": "Kluger", "yr": 23, "dealer_id": 5, "car_make": c_m_i[4]},
     ]
 
     for data in car_model_data:
         CarModel.objects.create(
             name=data['name'],
             car_make=data['car_make'],
-            type=data['type'],
-            year=data['year'],
+            year=data['yr'],
             dealer_id=data['dealer_id']
         )
