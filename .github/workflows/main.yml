@@ -55,5 +55,5 @@ jobs:
       - name: Lint JavaScript files
         run: |
           # Find all JS files excluding node_modules and run jshint
-          npx jshint $(find . -name "*.js" -not -path "*/node_modules/*")
+          find . -path "*/node_modules/*" -prune -o -name "*.js" -exec npx jshint {} +
           echo "Linted all the js files successfully
