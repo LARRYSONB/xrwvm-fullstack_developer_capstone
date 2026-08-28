@@ -11,7 +11,9 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ccow$tz_=9%dxu4(0%^(z%nx32#s@(zt9$ih@)5l54yny)wm-0'
+SECRET_KEY = (
+    'django-insecure-ccow$tz_=9%dxu4(0%^(z%nx32#s@(zt9$ih@)5l54yny)wm-0'
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -20,90 +22,40 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'larrysonbiya-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai',
-    '*',  # Added wildcard to accommodate dynamically assigned proxy environments
+    ('larrysonbiya-8000.theianext-0-labs-prod-misc-tools-us-east-0'
+     '.proxy.cognitiveclass.ai'),
+    '*',
 ]
 
 # 2. Complete origins including scheme (https:// or http://)
 CSRF_TRUSTED_ORIGINS = [
-    'https://https://larrysonbiya-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/',
-    'http://https://larrysonbiya-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/'
-    'http://127.0.0.1:8000',
-    'http://localhost:8000',
-]
-
-USE_X_FORWARDED_HOST = True
-
-CSRF_COOKIE_SAMESITE = 'None'
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SAMESITE = 'None'
-SESSION_COOKIE_SECURE = True
-
-# 3. Fixed typo: HTTP_X_FORWARDED_PROTO (was HTTP_X_FOWARDED_PROTO)
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [],
-}
-
-# Application definition
-INSTALLED_APPS = [
-    'djangoapp.apps.DjangoappConfig',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-]
-
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',  # Ensure CSRF middleware is active
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
-
-ROOT_URLCONF = 'djangoproj.urls'
-
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            os.path.join(BASE_DIR, 'frontend/static'),
-            os.path.join(BASE_DIR, 'frontend/build'),
-            os.path.join(BASE_DIR, 'frontend/build/static'),
-        ],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
+    ('https://larrysonbiya-8000.theiadockernext-1-labs-prod-theiak8s-4'
+     '-tor01.proxy.cognitiveclass.ai'),
+    ('http://larrysonbiya-8000.theiadockernext-1-labs-prod-theiak8s-4'
+     '-tor01.proxy.cognitiveclass.ai'),
+        'NAME': (
+            'django.contrib.auth.password_validation'
+            '.UserAttributeSimilarityValidator'
+        )
     },
-]
-
-WSGI_APPLICATION = 'djangoproj.wsgi.application'
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-AUTH_PASSWORD_VALIDATORS = [
-    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
-    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
-    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
-    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
+    {
+        'NAME': (
+            'django.contrib.auth.password_validation'
+            '.MinimumLengthValidator'
+        )
+    },
+    {
+        'NAME': (
+            'django.contrib.auth.password_validation'
+            '.CommonPasswordValidator'
+        )
+    },
+    {
+        'NAME': (
+            'django.contrib.auth.password_validation'
+            '.NumericPasswordValidator'
+        )
+    },
 ]
 
 LANGUAGE_CODE = 'en-us'
