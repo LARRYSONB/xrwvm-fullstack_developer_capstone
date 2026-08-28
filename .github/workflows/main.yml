@@ -1,5 +1,3 @@
-WORFLOW FILE
-
 name: 'Lint Code'
 
 on:
