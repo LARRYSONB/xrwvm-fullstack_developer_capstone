@@ -1,0 +1,6 @@
+Ini, TOML
+[flake8]
+exclude =
+    .git,
+    __pycache__,
+    */migrations/*
