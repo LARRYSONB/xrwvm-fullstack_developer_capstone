@@ -19,7 +19,7 @@ from django.views.generic import TemplateView
 from django.conf.urls.static import static
 from django.conf import settings
 from django.http import JsonResponse
-from djangoapp import views 
+from djangoapp import views
 
 urlpatterns = [
     # Static frontend pages
@@ -27,19 +27,25 @@ urlpatterns = [
     path('about/', TemplateView.as_view(template_name="About.html"), name='about'),
     path('contact/', TemplateView.as_view(template_name="Contact.html"), name='contact'),
     path('login/', TemplateView.as_view(template_name="index.html"), name='login_page'),
-    path('register/', TemplateView.as_view(template_name="index.html"), name='register_page'),
-   
+    path('register/', TemplateView.as_view(template_name="index.html"),
+         name='register_page'),
+
     # Frontend views for dealership features
     path('dealers/', TemplateView.as_view(template_name="index.html"), name='dealers'),
-    path('dealer/<int:dealer_id>', TemplateView.as_view(template_name="index.html"), name='dealer_details'),
-    path('postreview/<int:dealer_id>', TemplateView.as_view(template_name="index.html"), name='post_review'),
+    path('dealer/<int:dealer_id>',
+         TemplateView.as_view(template_name="index.html"), name='dealer_details'),
+    path('postreview/<int:dealer_id>',
+         TemplateView.as_view(template_name="index.html"), name='post_review'),
     # Dealer reviews API endpoint
-    path('reviews/', TemplateView.as_view(template_name="index.html"), name='get_reviews'),
-    path('reviews/dealer/<int:dealer_id>', TemplateView.as_view(template_name="index.html"), name='dealer_reviews'),
+    path('reviews/', TemplateView.as_view(template_name="index.html"),
+         name='get_reviews'),
+    path('reviews/dealer/<int:dealer_id>',
+         TemplateView.as_view(template_name="index.html"), name='dealer_reviews'),
 
     # Add this inside your djangoproj/urls.py urlpatterns list:
-    path('manifest.json', lambda request: JsonResponse({"short_name": "App", "name": "Dealer App", "start_url": "/", "display": "standalone"})),
-   
+    path('manifest.json', lambda request: JsonResponse(
+        {"short_name": "App", "name": "Dealer App", "start_url": "/", "display": "standalone"})),
+
 
     # Admin site
     path('admin/', admin.site.urls),
