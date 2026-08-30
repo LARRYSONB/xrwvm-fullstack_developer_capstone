@@ -22,17 +22,28 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    ('larrysonbiya-8000.theianext-0-labs-prod-misc-tools-us-east-0'
-     '.proxy.cognitiveclass.ai'),
+    (
+        'larrysonbiya-8000.theianext-0-labs-prod-misc-tools-us-east-0'
+        '.proxy.cognitiveclass.ai'
+    ),
     '*',
 ]
 
 # 2. Complete origins including scheme (https:// or http://)
 CSRF_TRUSTED_ORIGINS = [
-    ('https://larrysonbiya-8000.theiadockernext-1-labs-prod-theiak8s-4'
-     '-tor01.proxy.cognitiveclass.ai'),
-    ('http://larrysonbiya-8000.theiadockernext-1-labs-prod-theiak8s-4'
-     '-tor01.proxy.cognitiveclass.ai'),
+    (
+        'https://larrysonbiya-8000.theiadockernext-1-labs-prod-theiak8s-4'
+        '-tor01.proxy.cognitiveclass.ai'
+    ),
+    (
+        'http://larrysonbiya-8000.theiadockernext-1-labs-prod-theiak8s-4'
+        '-tor01.proxy.cognitiveclass.ai'
+    ),
+]
+
+AUTH_PASSWORD_VALIDATORS = [
+    {
+
         'NAME': (
             'django.contrib.auth.password_validation'
             '.UserAttributeSimilarityValidator'
