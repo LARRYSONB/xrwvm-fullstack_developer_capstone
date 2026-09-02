@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -48,6 +49,8 @@ REST_FRAMEWORK = {
 
 # 2. Complete origins including scheme (https:// or http://)
 CSRF_TRUSTED_ORIGINS = [
+    'https://*.proxy.cognitiveclass.ai',
+    'http://*.proxy.cognitiveclass.ai',
     (
         'https://larrysonbiya-8000.theiadockernext-1-labs-prod-theiak8s-4'
         '-tor01.proxy.cognitiveclass.ai'
@@ -61,7 +64,9 @@ CSRF_TRUSTED_ORIGINS = [
 
 # Application definition
 
+
 INSTALLED_APPS = [
+    'corsheaders',
     'djangoapp.apps.DjangoappConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -72,6 +77,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -80,11 +86,18 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
+# Allow CORS from all sources during lab development
+CORS_ALLOW_ALL_ORIGINS = True
+
+
 ROOT_URLCONF = 'djangoproj.urls'
+
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'BACKEND': 'django.template.backends.django'
+        '.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'frontend/build'), # If using React
             os.path.join(BASE_DIR, 'frontend/static'), # If using static templates
